@@ -1,0 +1,66 @@
+.main {
+  @apply flex min-h-screen items-center justify-center bg-light-pink bg-[url("../../assets//images/background-pattern-desktop.svg")] bg-no-repeat py-8;
+
+  .box {
+    @apply w-11/12 rounded-xl bg-white px-6 py-8 sm:w-[38rem] sm:px-8 sm:py-10;
+
+    .header {
+      @apply flex items-center gap-x-4 text-4xl font-bold text-dark-purple sm:gap-x-6 sm:text-6xl;
+
+      img {
+        @apply w-7 sm:w-auto;
+      }
+    }
+
+    .container {
+      @apply mt-10;
+
+      .item {
+        @apply py-6;
+
+        .que {
+          @apply flex cursor-pointer items-center justify-between gap-x-2 text-base font-semibold leading-5 transition-colors hover:text-[#9228c3] sm:text-lg sm:leading-normal;
+
+          .minus {
+            @apply hidden;
+          }
+        }
+
+        .ans {
+          @apply max-h-0 overflow-hidden text-sm text-grayish-purple transition-[max-height] duration-200 ease-in sm:text-base;
+
+          p {
+            @apply mt-4;
+          }
+        }
+
+        &.active {
+          .que {
+            .minus {
+              @apply block;
+            }
+            .plus {
+              @apply hidden;
+            }
+          }
+
+          .ans {
+            @apply max-h-44;
+          }
+        }
+
+        &:first-child {
+          @apply pt-0;
+        }
+
+        &:last-child {
+          @apply pb-0;
+        }
+      }
+
+      > *:not(:first-child) {
+        @apply border-t border-gray-100;
+      }
+    }
+  }
+}
